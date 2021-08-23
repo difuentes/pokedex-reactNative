@@ -40,6 +40,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PokedexDemilio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DA9DE407ECD1C293CD1EA6 /* libPods-PokedexDemilio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PokedexDemilio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955C58ED72BAC6D4FDFEBA6C /* Pods-PokedexDemilio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexDemilio.release.xcconfig"; path = "Target Support Files/Pods-PokedexDemilio/Pods-PokedexDemilio.release.xcconfig"; sourceTree = "<group>"; };
+		A841127226D28C9500BDDD2D /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		A841127326D28C9500BDDD2D /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D01783F2383E2D3DB0F08410 /* Pods-PokedexDemilio-PokedexDemilioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexDemilio-PokedexDemilioTests.debug.xcconfig"; path = "Target Support Files/Pods-PokedexDemilio-PokedexDemilioTests/Pods-PokedexDemilio-PokedexDemilioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2B672E2E87445301E07D7F2 /* Pods-PokedexDemilio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexDemilio.debug.xcconfig"; path = "Target Support Files/Pods-PokedexDemilio/Pods-PokedexDemilio.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -104,7 +106,6 @@
 				D01783F2383E2D3DB0F08410 /* Pods-PokedexDemilio-PokedexDemilioTests.debug.xcconfig */,
 				024878F9F37568B25D4F6902 /* Pods-PokedexDemilio-PokedexDemilioTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +129,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A841127126D28C5D00BDDD2D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* PokedexDemilio */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PokedexDemilioTests */,
@@ -147,6 +149,15 @@
 				00E356EE1AD99517003FC87E /* PokedexDemilioTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A841127126D28C5D00BDDD2D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A841127326D28C9500BDDD2D /* FontAwesome.ttf */,
+				A841127226D28C9500BDDD2D /* Ionicons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
