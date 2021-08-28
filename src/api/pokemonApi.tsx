@@ -1,4 +1,3 @@
-import axios from "axios";
+import axios from 'axios';
 
-
-export const pokemonAPi = axios.create();
+export const pokemonApi = axios.create();

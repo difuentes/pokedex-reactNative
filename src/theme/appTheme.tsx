@@ -1,20 +1,19 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    GlobalMargin:{
-        marginHorizontal:20
+    globalMargin: {
+        marginHorizontal: 20
     },
-    PokebolaBG:{
-     width:300,
-     height:300,
-     position:'absolute',
-     top:-100,
-     right:-100,
-     opacity:0.4
+    pokebolaBG: {
+        position: 'absolute',
+        width: 300,
+        height: 300,
+        top: -100,
+        right: -100,
+        opacity: 0.2
     },
-    title:{
-        fontSize:35,
-        fontWeight:'bold'
+    title: {
+        fontSize: 35,
+        fontWeight: 'bold'
     }
-
-})
+});

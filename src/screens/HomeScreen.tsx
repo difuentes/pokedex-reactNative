@@ -1,53 +1,61 @@
 import React from 'react'
-import { Image, Text, View ,FlatList, ActivityIndicator} from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Image, FlatList, ActivityIndicator, Text, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { usePokemonPaginated } from '../hooks/usePokemonPaginated';
 import { styles } from '../theme/appTheme';
-import { usePokemonPaginate } from '../hooks/usePokemonPaginate';
 import { PokemonCard } from '../components/PokemonCard';
+
 export const HomeScreen = () => {
 
-    //Captura el valor de top de la pantalla
-    const {top} = useSafeAreaInsets();
-    //return a info de la api 
-    const {simplePokemon,loaderPokemon} = usePokemonPaginate();
-    
+    const { top } = useSafeAreaInsets();
+    const { simplePokemonList, loadPokemons } = usePokemonPaginated();
+
     return (
-         <View>
-           
-            <View style={{alignItems:'center'}}>
-                {/*FlatList */}
-                <FlatList
-                    ListHeaderComponent={ 
-                        <Text style={{...styles.title,top:top+20,marginBottom:100,...styles.GlobalMargin,color:'#9E0000'}}>
-                            Pokedex
-                        </Text>
-                    }
-                    data={simplePokemon}   
-                    keyExtractor={(pokemon)=>pokemon.id}
-                    showsVerticalScrollIndicator={false}
-                    numColumns={2}
-                    renderItem={({item:pokemon})=> (
-                        <PokemonCard pokemon={pokemon}/>
-                        
-                        )}
-                    //infinite scroll
-                    onEndReached={loaderPokemon}
-                    onEndReachedThreshold={0.4}
-                    ListFooterComponent={(
+        <>
+            <Image 
+                source={ require('../assets/pokebola.png') }
+                style={ styles.pokebolaBG }
+            />
+
+
+            <View
+                style={{ alignItems: 'center' }}
+            >
+
+                <FlatList 
+                    data={ simplePokemonList }
+                    keyExtractor={ (pokemon) => pokemon.id }
+                    showsVerticalScrollIndicator={ false }
+                    numColumns={ 2 }
+
+                    // Header
+                    ListHeaderComponent={(
+                        <Text style={{
+                            ...styles.title,
+                            ...styles.globalMargin,
+                            top: top + 20,
+                            marginBottom: top + 20,
+                            paddingBottom: 10
+                        }}>Pokedex </Text>
+                    )}
+
+                    renderItem={ ({ item }) => ( <PokemonCard pokemon={ item } /> )}
+
+                    // infinite scroll
+                    onEndReached={ loadPokemons }
+                    onEndReachedThreshold={ 0.4 }
+
+                    ListFooterComponent={( 
                         <ActivityIndicator 
-                            size={30}
-                            color='#9E0000'
-                            style={{height:150}}
-                        />
+                            style={{ height: 100 }} 
+                            size={ 20 }
+                            color="grey"
+                        /> 
                     )}
                 />
             </View>
-            <Image
-                style={styles.PokebolaBG}
-                source={require('../assets/pokebola.png')}
-            />
-          
-        </View>
-       
+            
+        </>
     )
 }
